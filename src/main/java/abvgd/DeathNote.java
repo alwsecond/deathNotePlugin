@@ -40,7 +40,7 @@ public final class DeathNote extends JavaPlugin implements Listener {
                 ItemMeta DeathNoteItemMeta = DeathNoteItem.getItemMeta();
 
                 DeathNoteItemMeta.setDisplayName("§dТетрадь смерти");
-                // description
+
                 loreList.add("§2Человек, имя которого будет записано в этой тетради, умрет.");
                 loreList.add("§2Если вы не знаете, как выглядит человек, чье имя вы пишете, то ничего не произойдет.");
                 loreList.add("§2Поэтому все люди с одинаковыми именами не умрут из-за одной записи.");
@@ -61,7 +61,6 @@ public final class DeathNote extends JavaPlugin implements Listener {
                 if (target.isOnline())
                 {
                     player.sendMessage("§2" + target.getName() + "§e will die after 40s");
-                    // (target, "your cause of death")
                     deathScheduler.put(target, "умер от сердечного приступа");
                     Bukkit.getScheduler().runTaskLater(this, () -> {
                         target.damage(Math.sqrt(1000000));
@@ -101,6 +100,18 @@ public final class DeathNote extends JavaPlugin implements Listener {
                     Bukkit.getScheduler().runTaskLater(this, () -> {
                         target.damage(1000000);
                     }, 20L * time_s);
+                    return true;
+                }
+                if (args[0].equals("set"))
+                {
+                    Player target = Bukkit.getPlayer(args[1]);
+                    String deathCause = "";
+                    for (int i = 2; i < args.length; i++)
+                    {
+                        deathCause += args[i] + ' ';
+                    }
+                    player.sendMessage("§2" + target.getName() + "§e death cause set!");
+                    deathScheduler.put(target, deathCause);
                     return true;
                 }
             }
