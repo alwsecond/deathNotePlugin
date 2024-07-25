@@ -5,7 +5,7 @@ api-version: '1.21'
 commands:
   DeathNote:
     description: a command
-    usage: /<command> <player | time <player> <time> <description> | instant <player> <description>>
+    usage: /<command> <player | set <player> <description> | time <player> <time> <description> | instant <player> <description>>
     aliases:
       - deathnote
       - deathNote
