@@ -1,0 +1,11 @@
+name: DeathNote
+version: '${project.version}'
+main: abvgd.DeathNote
+api-version: '1.21'
+commands:
+  DeathNote:
+    description: a command
+    usage: /<command> <player | time <player> <time> <description> | instant <player> <description>>
+    aliases:
+      - deathnote
+      - deathNote
