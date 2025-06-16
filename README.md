@@ -1,4 +1,5 @@
 `DeathNote plugin for minecraft 1.21+`
+
 /deathnote - gives a player DeathNote book
 /deathnote <player> - default death after 40s
 /deathnote list - return a 'death' list
