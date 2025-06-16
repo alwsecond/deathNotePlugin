@@ -8,5 +8,6 @@
 /deathnote set <player> <cause_of_death> - after player dies, death message changes on <cause_of_death>
 
 if you got the DeathNote book, you can write any player nickname to kill him ( if player online )
+get the newest version in release ( v1.1 )
 
 **Please, change death cause, book lore and book title to your language using IDE, or ask me to change**
